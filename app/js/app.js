@@ -73,6 +73,7 @@ var jam;
             this.enemyCounter = jam.settings.enemies.timeout;
         }
         State.prototype.preload = function () {
+            this.game.load.crossOrigin = 'anonymous';
             this.game.load.spritesheet('player', 'http://i.imgur.com/13UxJcR.png', 64, 64);
             this.game.load.spritesheet('enemy', 'http://i.imgur.com/ptDIZRp.png', 64, 64);
         };
