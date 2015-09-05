@@ -1,0 +1,29 @@
+{
+  "name": "1hgj_base",
+  "version": "0.0.0",
+  "description": "Base code for 1h game jams with Phaser",
+  "main": "app/index.html",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-ts": "^5.0.0-beta.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coxm/1hgj_base_phaser"
+  },
+  "keywords": [
+    "1hgj",
+    "phaser",
+    "typescript"
+  ],
+  "author": "coxm",
+  "license": "GPLv3+",
+  "bugs": {
+    "url": "https://github.com/coxm/1hgj_base_phaser/issues"
+  },
+  "homepage": "https://github.com/coxm/1hgj_base_phaser"
+}
