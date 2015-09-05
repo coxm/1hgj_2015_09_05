@@ -73,8 +73,8 @@ var jam;
             this.enemyCounter = jam.settings.enemies.timeout;
         }
         State.prototype.preload = function () {
-            this.game.load.spritesheet('player', 'img/player.png', 64, 64);
-            this.game.load.spritesheet('enemy', 'img/enemy.png', 64, 64);
+            this.game.load.spritesheet('player', './img/player.png', 64, 64);
+            this.game.load.spritesheet('enemy', './img/enemy.png', 64, 64);
         };
         State.prototype.create = function () {
             var _this = this;

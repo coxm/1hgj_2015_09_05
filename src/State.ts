@@ -27,8 +27,8 @@ export class State extends Phaser.State {
 	enemyCounter: number = settings.enemies.timeout;
 
 	preload(): void {
-		this.game.load.spritesheet('player', 'img/player.png', 64, 64);
-		this.game.load.spritesheet('enemy', 'img/enemy.png', 64, 64);
+		this.game.load.spritesheet('player', './img/player.png', 64, 64);
+		this.game.load.spritesheet('enemy', './img/enemy.png', 64, 64);
 	}
 
 	create(): void {
