@@ -23,6 +23,10 @@ export var settings = {
 		max: 20,
 		timeout: 240,
 
+		minTimeout: 10,
+		killDecrease: 20,
+		createDecrease: 5,
+
 		xSpeed: 30,
 		ySpeed: 30,
 

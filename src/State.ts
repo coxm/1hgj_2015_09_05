@@ -166,20 +166,28 @@ export class State extends Phaser.State {
 	}
 
 	buttonKill(): void {
+		var killed: boolean = false;
 		this.enemies.forEach((e: Phaser.Sprite): void => {
 			const d: number = dist(this.player, e);
 			console.log('enemy distance', d);
 			if (d < settings.button.deathRadius) {
 				console.log('killing! dist', d);
 				e.kill();
+				killed = true;
 			}
 			else {
 				console.log('not killing: dist', d);
 			}
 		}, this);
+		if (killed) {
+			settings.enemies.timeout -= settings.enemies.killDecrease;
+		}
 	}
 
 	addEnemy(): void {
+		if (settings.enemies.timeout > settings.enemies.minTimeout) {
+			settings.enemies.timeout -= settings.enemies.createDecrease;
+		}
 		if (this.enemies.length >= settings.enemies.max) {
 			console.log('not adding enemy (hit max)');
 			return;

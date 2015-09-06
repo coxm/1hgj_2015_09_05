@@ -38,6 +38,9 @@ var jam;
         enemies: {
             max: 20,
             timeout: 240,
+            minTimeout: 10,
+            killDecrease: 20,
+            createDecrease: 5,
             xSpeed: 30,
             ySpeed: 30,
             killRadius: 30
@@ -183,19 +186,27 @@ var jam;
         };
         State.prototype.buttonKill = function () {
             var _this = this;
+            var killed = false;
             this.enemies.forEach(function (e) {
                 var d = jam.dist(_this.player, e);
                 console.log('enemy distance', d);
                 if (d < jam.settings.button.deathRadius) {
                     console.log('killing! dist', d);
                     e.kill();
+                    killed = true;
                 }
                 else {
                     console.log('not killing: dist', d);
                 }
             }, this);
+            if (killed) {
+                jam.settings.enemies.timeout -= jam.settings.enemies.killDecrease;
+            }
         };
         State.prototype.addEnemy = function () {
+            if (jam.settings.enemies.timeout > jam.settings.enemies.minTimeout) {
+                jam.settings.enemies.timeout -= jam.settings.enemies.createDecrease;
+            }
             if (this.enemies.length >= jam.settings.enemies.max) {
                 console.log('not adding enemy (hit max)');
                 return;
